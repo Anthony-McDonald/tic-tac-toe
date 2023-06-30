@@ -9,6 +9,8 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .header {
@@ -32,11 +34,17 @@ html, body {
 }
 
 .main {
-    flex: 1;
+    flex: 0.5;
     margin: 2rem;   
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    width: 50%;
+}
+
+.gamewindow {
+    background-color: white;
 }
 
 .sideselector {
@@ -53,7 +61,7 @@ html, body {
     justify-content: space-evenly;
 }
 
-.sidebox {
+.mainbox {
     background-color: white;
     margin: 2rem;
     border-radius: 2rem;
@@ -61,6 +69,27 @@ html, body {
     display: flex;
     flex-direction: column;
 }
+
+
+/* .tttboxholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.tttrow {
+    background-color: green;
+    height: 5px;
+    width: 5px;
+}
+.tttbox {
+    background-color: gray;
+    width: 2rem;
+    height: 2rem;
+} */
+
 
 .footer {
     background-color: gray;
