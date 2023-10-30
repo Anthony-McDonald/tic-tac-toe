@@ -10,6 +10,7 @@ player1.sideSelect("fire")
 player2 = createPlayer("player")
 
 firebutton.addEventListener("click", function() {
+
     styleDisplaySwitcher(".sidebox", ".gamewindow")
     player1.sideSelect("fire")
     player2.sideSelect("water")
@@ -89,7 +90,7 @@ function bindClick(i) {
     playerToGo = 
       console.log("you clicked region number " + i);
 
-      if (!hasOnlyImg(boxes[i])) {
+      if (!hasOnlyImg(boxes[i]) && !playerWon) {
         if (player1Turn) {
           boxes[i].innerHTML = player1.returnSideImage();
           } else {
@@ -166,12 +167,18 @@ function bindClick(i) {
   }
 
   function triggerWin(player1Turn) {
-    if (player1Turn) {
-      setTimeout(function() {alert('Player 1 wins!, game over folks!');},5);
+
+    if (!playerWon) {
+      if (player1Turn) {
+        setTimeout(function() {alert('Player 1 wins!, game over folks!');},5);
+      } else {
+        setTimeout(function() {alert('Player 2 wins!, game over folks!');},5);
+      }
     } else {
-      setTimeout(function() {alert('Player 2 wins!, game over folks!');},5);
+      alert("game is already over, click restart to play again");
     }
     playerWon = true;
+
   }
   
 
